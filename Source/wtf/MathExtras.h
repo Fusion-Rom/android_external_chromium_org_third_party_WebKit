@@ -302,7 +302,7 @@ inline void doubleToInteger(double d, unsigned long long& value)
         value = 0;
     else {
         // -2^{64} < fmodValue < 2^{64}.
-        double fmodValue = fmod(trunc(d), std::numeric_limits<unsigned long long>::max() + 1.0);
+        double fmodValue = fmod(trunc(d), std::numeric_limits<unsigned long long>::max() + (unsigned long long)1.0);
         if (fmodValue >= 0) {
             // 0 <= fmodValue < 2^{64}.
             // 0 <= value < 2^{64}. This cast causes no loss.

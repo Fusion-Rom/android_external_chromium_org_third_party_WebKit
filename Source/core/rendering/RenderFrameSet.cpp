@@ -267,7 +267,7 @@ void RenderFrameSet::layOutAxis(GridAxis& axis, const Vector<HTMLDimension>& gri
 
         for (int i = 0; i < gridLen; ++i) {
             if (grid[i].isRelative()) {
-                gridLayout[i] = (max(grid[i].value(), 1.) * remainingRelative) / totalRelative;
+                gridLayout[i] = (max(grid[i].value(), (double)1.) * remainingRelative) / totalRelative;
                 remainingLen -= gridLayout[i];
                 lastRelative = i;
             }

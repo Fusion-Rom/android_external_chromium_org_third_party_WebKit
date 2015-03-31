@@ -72,7 +72,7 @@ static const float scrollTime = 0.433;
 static bool isNonPercentage(double value, const char* method, ExceptionState& exceptionState)
 {
     if (value < 0 || value > 100) {
-        exceptionState.throwDOMException(IndexSizeError, ExceptionMessages::indexOutsideRange("value", value, 0.0, ExceptionMessages::InclusiveBound, 100.0, ExceptionMessages::InclusiveBound));
+        exceptionState.throwDOMException(IndexSizeError, ExceptionMessages::indexOutsideRange("value", value, (double)0.0, ExceptionMessages::InclusiveBound, (double)100.0, ExceptionMessages::InclusiveBound));
         return true;
     }
     return false;

@@ -94,7 +94,7 @@ void HTMLMeterElement::setMin(double min)
 
 double HTMLMeterElement::max() const
 {
-    return std::max(getFloatingPointAttribute(maxAttr, std::max(1.0, min())), min());
+    return std::max(getFloatingPointAttribute(maxAttr, std::max((double)1.0, min())), min());
 }
 
 void HTMLMeterElement::setMax(double max)

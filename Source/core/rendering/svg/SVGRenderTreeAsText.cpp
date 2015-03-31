@@ -299,11 +299,11 @@ static void writeStyle(TextStream& ts, const RenderObject& object)
                 dashArray.append(it->value(lengthContext));
 
             writeIfNotDefault(ts, "opacity", svgStyle.strokeOpacity(), 1.0f);
-            writeIfNotDefault(ts, "stroke width", strokeWidth, 1.0);
+            writeIfNotDefault(ts, "stroke width", strokeWidth, (double)1.0);
             writeIfNotDefault(ts, "miter limit", svgStyle.strokeMiterLimit(), 4.0f);
             writeIfNotDefault(ts, "line cap", svgStyle.capStyle(), ButtCap);
             writeIfNotDefault(ts, "line join", svgStyle.joinStyle(), MiterJoin);
-            writeIfNotDefault(ts, "dash offset", dashOffset, 0.0);
+            writeIfNotDefault(ts, "dash offset", dashOffset, (double)0.0);
             if (!dashArray.isEmpty())
                 writeNameValuePair(ts, "dash array", dashArray);
 

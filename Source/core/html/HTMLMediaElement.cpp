@@ -1977,7 +1977,7 @@ void HTMLMediaElement::seek(double time)
     time = std::min(time, duration());
 
     // 7 - If the new playback position is less than the earliest possible position, let it be that position instead.
-    time = std::max(time, 0.0);
+    time = std::max(time, (double)0.0);
 
     // Ask the media engine for the time value in the movie's time scale before comparing with current time. This
     // is necessary because if the seek time is not equal to currentTime but the delta is less than the movie's
@@ -2359,7 +2359,7 @@ void HTMLMediaElement::setVolume(double vol, ExceptionState& exceptionState)
         return;
 
     if (vol < 0.0f || vol > 1.0f) {
-        exceptionState.throwDOMException(IndexSizeError, ExceptionMessages::indexOutsideRange("volume", vol, 0.0, ExceptionMessages::InclusiveBound, 1.0, ExceptionMessages::InclusiveBound));
+        exceptionState.throwDOMException(IndexSizeError, ExceptionMessages::indexOutsideRange("volume", vol, (double)0.0, ExceptionMessages::InclusiveBound, (double)1.0, ExceptionMessages::InclusiveBound));
         return;
     }
 

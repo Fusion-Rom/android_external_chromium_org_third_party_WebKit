@@ -73,7 +73,7 @@ static HTMLDimension parseDimension(const CharacterType* characters, size_t last
                 double fractionValue = charactersToUIntStrict(fractionNumbers.data(), fractionNumbers.size(), &ok);
                 ASSERT(ok);
 
-                value += fractionValue / pow(10., static_cast<double>(fractionNumbers.size()));
+                value += fractionValue / pow((double)10., static_cast<double>(fractionNumbers.size()));
             }
         }
     }

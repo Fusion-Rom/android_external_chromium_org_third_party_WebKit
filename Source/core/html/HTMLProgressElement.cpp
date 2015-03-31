@@ -106,7 +106,7 @@ double HTMLProgressElement::value() const
 
 void HTMLProgressElement::setValue(double value)
 {
-    setFloatingPointAttribute(valueAttr, std::max(value, 0.));
+    setFloatingPointAttribute(valueAttr, std::max(value, (double)0.));
 }
 
 double HTMLProgressElement::max() const

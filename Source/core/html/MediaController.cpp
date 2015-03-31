@@ -150,7 +150,7 @@ double MediaController::currentTime() const
 
     if (m_position == MediaPlayer::invalidTime()) {
         // Some clocks may return times outside the range of [0..duration].
-        m_position = std::max(0.0, std::min(duration(), m_clock->currentTime()));
+        m_position = std::max((double)0.0, std::min(duration(), m_clock->currentTime()));
         m_clearPositionTimer.startOneShot(0, FROM_HERE);
     }
 
@@ -162,7 +162,7 @@ void MediaController::setCurrentTime(double time)
     // When the user agent is to seek the media controller to a particular new playback position,
     // it must follow these steps:
     // If the new playback position is less than zero, then set it to zero.
-    time = std::max(0.0, time);
+    time = std::max((double)0.0, time);
 
     // If the new playback position is greater than the media controller duration, then set it
     // to the media controller duration.
@@ -260,7 +260,7 @@ void MediaController::setVolume(double level, ExceptionState& exceptionState)
     // If the new value is outside the range 0.0 to 1.0 inclusive, then, on setting, an
     // IndexSizeError exception must be raised instead.
     if (level < 0 || level > 1) {
-        exceptionState.throwDOMException(IndexSizeError, ExceptionMessages::indexOutsideRange("volume", level, 0.0, ExceptionMessages::InclusiveBound, 1.0, ExceptionMessages::InclusiveBound));
+        exceptionState.throwDOMException(IndexSizeError, ExceptionMessages::indexOutsideRange("volume", level, (double)0.0, ExceptionMessages::InclusiveBound, (double)1.0, ExceptionMessages::InclusiveBound));
         return;
     }
 
