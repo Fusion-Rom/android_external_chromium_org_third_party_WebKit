@@ -28,7 +28,7 @@
     const short               FILTER_SKIP                    = 3;
 
     // Constants for whatToShow
-    const unsigned long       SHOW_ALL                       = 0xFFFFFFFF;
+    const unsigned long       SHOW_ALL                       = 0x7FFFFFFF;
     const unsigned long       SHOW_ELEMENT                   = 0x00000001;
     const unsigned long       SHOW_ATTRIBUTE                 = 0x00000002;
     const unsigned long       SHOW_TEXT                      = 0x00000004;

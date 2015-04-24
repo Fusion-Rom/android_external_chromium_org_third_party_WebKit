@@ -52,7 +52,7 @@ public:
      * to the value of NodeType for the equivalent node type.
      */
     enum {
-        SHOW_ALL                       = 0xFFFFFFFF,
+        SHOW_ALL                       = 0x7FFFFFFF,
         SHOW_ELEMENT                   = 0x00000001,
         SHOW_ATTRIBUTE                 = 0x00000002,
         SHOW_TEXT                      = 0x00000004,
